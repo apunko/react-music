@@ -3,6 +3,9 @@
     login: ''
     password: ''
 
+  valid: ->
+    @state.login && @state.password
+
   handleSubmit: (e) ->
     e.preventDefault()
     $.ajax
@@ -13,9 +16,9 @@
       success: (data) =>
         @props.performLogIn true
       error: (data) =>
-        alert "Sorry error occurred while log in, please try again"
+        alert "Sorry error occurred while loged in, please try again"
 
-  handleChange: (e) ->
+  inputChanged: (e) ->
     name = e.target.name
     @setState "#{ name }": e.target.value
 
@@ -34,7 +37,7 @@
           placeholder: 'Login'
           name: 'login'
           value: @state.login
-          onChange: @handleChange
+          onChange: @inputChanged
         React.DOM.label
           'Password'
         React.DOM.input
@@ -42,9 +45,10 @@
           placeholder: 'Password'
           name: 'password'
           value: @state.password
-          onChange: @handleChange
+          onChange: @inputChanged
         React.DOM.p
           React.DOM.button
             className: "button expanded"
             type: 'submit'
+            disabled: !@valid()
             'Log in'
