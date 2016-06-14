@@ -13,9 +13,9 @@
       data: { user_inf: @state }
       dataType: 'JSON'
       success: (data) =>
-        @props.handleLogedIn data
+        @props.handleLogedIn true
       error: (data) =>
-        @props.handleLogedIn data
+        @props.handleLogedIn true
 
   handleChange: (e) ->
     name = e.target.name

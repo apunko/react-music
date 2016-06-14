@@ -9,9 +9,12 @@ links = ["http://www.archive.org/download/MoonlightSonata_755/Beethoven-Moonligh
     alert @state.key
     @setState key: links[1]
 
+  singOut: ->
+    @props.singOut(false)
+
   render: ->
     React.DOM.div
       className: 'box'
       key: @state.key
       React.createElement AudioPlayer, url: @state.key
-      React.createElement NextButton, handleClicked: @getNextSong
+      React.createElement NextButton, getNextSong: @getNextSong, singOut: @singOut

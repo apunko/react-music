@@ -1,17 +1,20 @@
 @NextButton = React.createClass
-  handleDelete: (e) ->
-    #e.preventDefault()
+  getNextSong: (e) ->
     alert "clicked!"
-    @props.handleClicked "value"
-# yeah... jQuery doesn't have a $.delete shortcut method
-    ###$.ajax
-      method: 'DELETE'
-      url: "/records/#{ @props.record.id }"
-      dataType: 'JSON'
-      success: () =>
-        @props.handleDeleteRecord @props.record
-  ###
+    @props.getNextSong "value"
+
+  singOut: ->
+    alert "clicked!"
+    @props.singOut "value"
+
   render: ->
-    React.DOM.a
-      onClick: @handleDelete
-      'Next'
+    React.DOM.div
+      className: 'buttonsPanel'
+      React.DOM.a
+        onClick: @singOut
+        className: 'button'
+        'Sing out'
+      React.DOM.a
+        onClick: @getNextSong
+        className: 'button'
+        'Next'
