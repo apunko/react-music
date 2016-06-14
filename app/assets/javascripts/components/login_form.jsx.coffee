@@ -4,7 +4,7 @@
     password: ''
 
   handleSubmit: (e) ->
-    alert "submit"
+    alert "submit 12"
     e.preventDefault()
     alert "after prevent"
     $.ajax
@@ -13,8 +13,10 @@
       data: { user_inf: @state }
       dataType: 'JSON'
       success: (data) =>
+        alert "in success"
         @props.handleLogedIn true
       error: (data) =>
+        alert "in errro"
         @props.handleLogedIn true
 
   handleChange: (e) ->

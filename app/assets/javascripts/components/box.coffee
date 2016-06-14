@@ -1,6 +1,6 @@
 @Box = React.createClass
   getInitialState: ->
-    logged_in: false
+    logged_in: @props.loggingStatus
 
   performLogOperation: (loggidIn) ->
     alert "performLogOperation"
