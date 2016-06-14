@@ -1,4 +1,4 @@
-@Box = React.createClass
+@PageContent = React.createClass
   getInitialState: ->
     logged_in: @props.loggingStatus
 

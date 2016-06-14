@@ -1,6 +1,5 @@
 @ButtonsPanel = React.createClass
   getNextSong: ->
-    alert "clicked"
     @props.getNextSong()
 
   singOut: ->
