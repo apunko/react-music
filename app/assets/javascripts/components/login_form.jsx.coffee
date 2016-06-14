@@ -4,20 +4,16 @@
     password: ''
 
   handleSubmit: (e) ->
-    alert "submit 12"
     e.preventDefault()
-    alert "after prevent"
     $.ajax
       method: 'POST'
       url: '/sing_in'
       data: { user_inf: @state }
       dataType: 'JSON'
       success: (data) =>
-        alert "in success"
-        @props.handleLogedIn true
+        @props.performLogIn true
       error: (data) =>
-        alert "in errro"
-        @props.handleLogedIn true
+        alert "Sorry error occurred while log in, please try again"
 
   handleChange: (e) ->
     name = e.target.name

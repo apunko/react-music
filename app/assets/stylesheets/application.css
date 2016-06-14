@@ -16,3 +16,11 @@
 
  */
 
+#page-wrap {
+    width: 800px;
+    margin: 300px auto;
+}
+
+.wrap {
+    width: 300px;;
+}

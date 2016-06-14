@@ -2,12 +2,11 @@
   getInitialState: ->
     logged_in: @props.loggingStatus
 
-  performLogOperation: (loggidIn) ->
-    alert "performLogOperation"
-    @setState logged_in: loggidIn
+  performLogIn: (loggedIn) ->
+    @setState logged_in: loggedIn
 
   render: ->
     if @state.logged_in
-      React.createElement MusicBox, singOut: @performLogOperation
+      React.createElement MusicBox, performLogIn: @performLogIn
     else
-      React.createElement LoginForm, handleLogedIn: @performLogOperation
+      React.createElement LoginForm, performLogIn: @performLogIn

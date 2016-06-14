@@ -10,15 +10,13 @@ class ApplicationController < ActionController::Base
 
   def sing_in
     session[:login] = user_params[:login]
-    login = session[:login]
-    data = {login: login}
+    data = {login: session[:login]}
     render :json => data, :status => :ok
   end
 
   def sing_out
     reset_session
-    data = {logStatus: 'Logged out'}
-    render :json => data, :status => :ok
+    render :nothing => true, :status => :ok
   end
 
   private

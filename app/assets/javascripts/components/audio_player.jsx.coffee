@@ -2,7 +2,7 @@
   getInitialState: ->
     url: @props.url
   getDefaultProps: ->
-    url: "123"
+    url: ""
   render: ->
     React.createElement(
       "audio",

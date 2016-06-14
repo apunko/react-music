@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'application#index'
 
   post '/sing_in' => 'application#sing_in'
-  post '/sing_out' => 'application#sing_out'
+  delete '/sing_out' => 'application#sing_out'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
